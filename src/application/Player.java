@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Player {
 	private Integer number;
+	private Integer color;
 	private List<Territory> territory_list;
 	
 	public Player (Integer m_number, List<Territory> m_territory_list) {
@@ -31,5 +32,13 @@ public class Player {
 
 	public void setNumber(Integer number) {
 		this.number = number;
+	}
+
+	public Integer getColor() {
+		return color;
+	}
+
+	public void setColor(Integer color) {
+		this.color = color;
 	}
 }

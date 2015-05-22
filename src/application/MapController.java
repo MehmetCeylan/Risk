@@ -1,12 +1,15 @@
-import java.util.*;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Controller {
+import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
+
+
+public class MapController extends AnchorPane implements Initializable{
+	private Main application;
 	private int[][] map;
 	private Territory[] map_list = new Territory[42];
-	
-	public Controller ()
-	{
-	}
+	private int PlayerArray[];
 	
 	public void createMap()
 	{
@@ -70,4 +73,20 @@ public class Controller {
 		this.map = map;
 	}
 	
+	public void setApp(Main application){
+        this.application = application;
+    }
+	
+	@Override
+    public void initialize(URL location, ResourceBundle resources) {
+		createMap();
+    }
+
+	public int[] getPlayerArray() {
+		return PlayerArray;
+	}
+
+	public void setPlayerArray(int player[]) {
+		PlayerArray = player;
+	}
 }

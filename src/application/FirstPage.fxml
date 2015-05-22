@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstPageController">
+   <children>
+      <Text layoutX="31.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Number :" wrappingWidth="253.7294921875" />
+      <TextField fx:id="playerNumber" layoutX="165.0" layoutY="10.0" />      
+      <TextArea fx:id="textArea" layoutX="5.0" layoutY="428.0" prefHeight="65.0" prefWidth="489.0" />
+      <Text fx:id="player1" layoutX="45.0" layoutY="84.0" text="Player 1 Color" visible="false" />
+      <Text fx:id="player2" layoutX="45.0" layoutY="132.0" text="Player 2 Color" visible="false" />
+      <Text fx:id="player3" layoutX="45.0" layoutY="181.0" text="Player 3 Color" visible="false" />
+      <Text fx:id="player4" layoutX="45.0" layoutY="231.0" text="Player 4 Color" visible="false" />
+      <Text fx:id="player5" layoutX="45.0" layoutY="281.0" text="Player 5 Color" visible="false" />
+      <Text fx:id="player6" layoutX="45.0" layoutY="332.0" text="Player 6 Color" visible="false" />
+      <ComboBox fx:id="colorPlayer1" layoutX="291.0" layoutY="67.0" promptText="Color" visible="false" visibleRowCount="6">
+        <items>
+        	<FXCollections fx:factory="observableArrayList">
+              <String fx:value="Red" />
+              <String fx:value="Blue" />
+              <String fx:value="Green" />
+              <String fx:value="Yellow" />
+              <String fx:value="Brown" />
+              <String fx:value="Purple" />
+            </FXCollections>
+        </items>
+      </ComboBox>
+      <ComboBox fx:id="colorPlayer2" layoutX="291.0" layoutY="115.0" promptText="Color" visible="false">
+        <items>
+        	<FXCollections fx:factory="observableArrayList">
+              <String fx:value="Red" />
+              <String fx:value="Blue" />
+              <String fx:value="Green" />
+              <String fx:value="Yellow" />
+              <String fx:value="Brown" />
+              <String fx:value="Purple" />
+            </FXCollections>
+        </items>
+      </ComboBox>
+      <ComboBox fx:id="colorPlayer3" layoutX="291.0" layoutY="164.0" promptText="Color" visible="false">
+        <items>
+        	<FXCollections fx:factory="observableArrayList">
+              <String fx:value="Red" />
+              <String fx:value="Blue" />
+              <String fx:value="Green" />
+              <String fx:value="Yellow" />
+              <String fx:value="Brown" />
+              <String fx:value="Purple" />
+            </FXCollections>
+        </items>
+      </ComboBox>
+      <ComboBox fx:id="colorPlayer4" layoutX="291.0" layoutY="214.0" promptText="Color" visible="false">
+        <items>
+        	<FXCollections fx:factory="observableArrayList">
+              <String fx:value="Red" />
+              <String fx:value="Blue" />
+              <String fx:value="Green" />
+              <String fx:value="Yellow" />
+              <String fx:value="Brown" />
+              <String fx:value="Purple" />
+            </FXCollections>
+        </items>
+      </ComboBox>
+      <ComboBox fx:id="colorPlayer5" layoutX="291.0" layoutY="264.0" promptText="Color" visible="false">
+        <items>
+        	<FXCollections fx:factory="observableArrayList">
+              <String fx:value="Red" />
+              <String fx:value="Blue" />
+              <String fx:value="Green" />
+              <String fx:value="Yellow" />
+              <String fx:value="Brown" />
+              <String fx:value="Purple" />
+            </FXCollections>
+        </items>
+      </ComboBox>
+      <ComboBox fx:id="colorPlayer6" layoutX="291.0" layoutY="315.0" promptText="Color" visible="false">
+        <items>
+        	<FXCollections fx:factory="observableArrayList">
+              <String fx:value="Red" />
+              <String fx:value="Blue" />
+              <String fx:value="Green" />
+              <String fx:value="Yellow" />
+              <String fx:value="Brown" />
+              <String fx:value="Purple" />
+            </FXCollections>
+        </items>
+      </ComboBox>
+      <Button layoutX="388.0" layoutY="8.0" mnemonicParsing="false" onAction="#processOK" text="OK" />
+      <Button layoutX="432.0" layoutY="403.0" mnemonicParsing="false" onAction="#processGAME" text="GAME" />
+   </children>
+</AnchorPane>
