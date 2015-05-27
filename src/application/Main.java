@@ -42,6 +42,7 @@ public class Main extends Application {
             MapController map = (MapController) replaceSceneContent("Map.fxml");
             map.setApp(this);
             map.setPlayerArray(player);
+            map.startGame();
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }

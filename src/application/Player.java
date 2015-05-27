@@ -4,10 +4,14 @@ public class Player {
 	private Integer number;
 	private Integer color;
 	private List<Territory> territory_list;
+	private GameState state;
+	private Integer deployedArmy;
 	
-	public Player (Integer m_number, List<Territory> m_territory_list) {
-		number = m_number;
-		territory_list = m_territory_list;
+	public Player () {
+		number = 0;
+		color = 0;
+		deployedArmy = 0;
+		state = null;
 	}
 	
 	public void addTerritory (Territory e) {
@@ -40,5 +44,21 @@ public class Player {
 
 	public void setColor(Integer color) {
 		this.color = color;
+	}
+
+	public GameState getState() {
+		return state;
+	}
+
+	public void setState(GameState state) {
+		this.state = state;
+	}
+
+	public Integer getDeployedArmy() {
+		return deployedArmy;
+	}
+
+	public void setDeployedArmy(Integer deployedArmy) {
+		this.deployedArmy = deployedArmy;
 	}
 }

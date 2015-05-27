@@ -5,11 +5,11 @@ public class Territory {
 	private Player owner;
 	private Integer army;
 	
-	public Territory(int m_number)
+	public Territory(int new_number)
 	{
 		owner = null;
 		army = 0;
-		number = m_number;
+		number = new_number;
 	}
 
 	public Integer getArmy() {
