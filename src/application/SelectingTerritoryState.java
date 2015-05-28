@@ -10,7 +10,7 @@ public class SelectingTerritoryState implements GameState {
 	public void select(int territory, Player owner) {
 		if (controller.ownerCheck())
 		{
-			owner.setState(new FortifyingState());
+			owner.setState(new FortifyingState(controller));
 		}
 		else if (controller.map_list[territory].getOwner() == null)
 		{
@@ -21,7 +21,7 @@ public class SelectingTerritoryState implements GameState {
 			owner.setDeployedArmy(owner.getDeployedArmy() - 1);
 			if (controller.ownerCheck())
 			{
-				owner.setState(new FortifyingState());
+				owner.setState(new FortifyingState(controller));
 			}
 		}
 		else
@@ -32,6 +32,13 @@ public class SelectingTerritoryState implements GameState {
 
 	@Override
 	public void fortify(int territory, Player owner, int army) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void attack(Territory first_territory, Territory second_territory,
+			int army) {
 		// TODO Auto-generated method stub
 		
 	}

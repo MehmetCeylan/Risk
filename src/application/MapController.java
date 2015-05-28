@@ -297,7 +297,7 @@ public class MapController extends AnchorPane implements Initializable{
 		if(player_list[counter].getState() instanceof SelectingTerritoryState)
 		{
 			counter++;
-			if (counter > player_list.length)
+			if (counter >= player_list.length)
 			{
 				counter = 0;
 			}
