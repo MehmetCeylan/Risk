@@ -384,10 +384,6 @@ public class MapController extends AnchorPane implements Initializable{
 				}
 			}
 		}
-//		else if (player_list[counter].getState() instanceof EndTurnState)
-//		{
-//			counter++;
-//		}
 		
 		if(player_list[counter].getState() instanceof SelectingTerritoryState)
 		{
@@ -417,6 +413,16 @@ public class MapController extends AnchorPane implements Initializable{
 					+ " and write army number that which do you want to transfer");
 
 		}
+		else if(player_list[counter].getState() instanceof EndGameState)
+		{
+			play.setText("Player Dead");
+			textArea.setText("Player Dead");
+			counter++;
+			if (counter >= player_list.length)
+			{
+				counter = 0;
+			}
+		}
 	}
 	
 	public void play(ActionEvent event)
@@ -425,7 +431,8 @@ public class MapController extends AnchorPane implements Initializable{
 				&&  Integer.parseInt(army.getText()) <= player_list[counter].getDeployedArmy()) {
 			player_list[counter].getState().select(Integer.parseInt(first_territory.getText()), player_list[counter]);
 			player_list[counter].getState().deploy(Integer.parseInt(first_territory.getText()), player_list[counter], Integer.parseInt(army.getText()));
-			player_list[counter].getState().attack(Integer.parseInt(first_territory.getText()), Integer.parseInt(second_territory.getText()), Integer.parseInt(army.getText()), Integer.parseInt(defender_army.getText()));
+			player_list[counter].getState().attack(Integer.parseInt(first_territory.getText()), Integer.parseInt(second_territory.getText()), 
+					player_list[counter],Integer.parseInt(army.getText()), Integer.parseInt(defender_army.getText()));
 			player_list[counter].getState().transfer(Integer.parseInt(first_territory.getText()), Integer.parseInt(second_territory.getText()), player_list[counter], Integer.parseInt(army.getText()));
 		}
 		else

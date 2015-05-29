@@ -36,7 +36,7 @@ public class DeployingState implements GameState {
 	}
 
 	@Override
-	public void attack(int first_territory, int second_territory,
+	public void attack(int first_territory, int second_territory, Player owner,
 			int army, int defender_army) {
 		// TODO Auto-generated method stub
 		

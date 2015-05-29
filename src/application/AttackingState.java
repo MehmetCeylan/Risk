@@ -22,7 +22,7 @@ public class AttackingState implements GameState{
 	}
 
 	@Override
-	public void attack(int first_territory, int second_territory,
+	public void attack(int first_territory, int second_territory, Player owner,
 			int army, int defender_army) {
 		if (controller.map[first_territory][second_territory] == 1)
 		{
@@ -75,6 +75,14 @@ public class AttackingState implements GameState{
 					if ((attacker_won - defender_won) > 0)
 					{
 						controller.map_list[second_territory].setArmy(controller.map_list[second_territory].getArmy() - (attacker_won - defender_won));
+					}
+					
+					if (controller.map_list[second_territory].getArmy() == 0)
+					{
+						if (controller.map_list[second_territory].getOwner().getOwned_territory() == 1)
+						{
+							controller.map_list[second_territory].getOwner().setState(new EndGameState(controller));
+						}
 					}
 				}
 			}
