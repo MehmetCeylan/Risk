@@ -4,6 +4,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -16,9 +17,11 @@ public class MapController extends AnchorPane implements Initializable{
 	public Territory[] map_list = new Territory[42];
 	public Player[] player_list;
 	public int PlayerArray[];
-	private int counter = 0;
-	
+	public int counter = 0;
 	public TextField[] textFieldArray;
+	public TextField[] defenderDiceArray;
+	public TextField[] attackingDiceArray;
+	private boolean first_deploying = true;
 	
 	@FXML
 	TextField TextField0;
@@ -154,7 +157,31 @@ public class MapController extends AnchorPane implements Initializable{
 	
 	@FXML
 	TextField second_territory;
+	
+	@FXML
+	TextField army;
+	
+	@FXML
+	TextField defender_army;
+	
+	@FXML
+	Button play;
+	
+	@FXML
+	TextField defence_dice1;
 
+	@FXML
+	TextField defence_dice2;
+	
+	@FXML
+	TextField attack_dice1;
+	
+	@FXML
+	TextField attack_dice2;
+	
+	@FXML
+	TextField attack_dice3;
+	
 	public int[][] getMap() {
 		return map;
 	}
@@ -273,6 +300,10 @@ public class MapController extends AnchorPane implements Initializable{
 										 TextField32, TextField33, TextField34, TextField35, TextField36, TextField37, TextField38, TextField39,
 										 TextField40, TextField41};
 		
+		defenderDiceArray = new TextField[]{defence_dice1,defence_dice2};
+		
+		attackingDiceArray = new TextField[]{attack_dice1,attack_dice2,attack_dice3};
+		
 		player_list = new Player[PlayerArray.length];
 		
 		for (int i = 0; i < PlayerArray.length; i++)
@@ -288,20 +319,118 @@ public class MapController extends AnchorPane implements Initializable{
 		{
 			player_list[i].setDeployedArmy(startingArmy());
 		}
+		
+		play.setText("Select");
+		play.setVisible(true);
 	}
 	
 	public void processEndState(ActionEvent event)
 	{
-		player_list[counter].getState().select(Integer.parseInt(first_territory.getText()), player_list[counter]);
+		if(player_list[counter].getState() instanceof DeployingState)
+		{
+			if(player_list[counter].getDeployedArmy() == 0)
+			{
+				player_list[counter].setState(new AttackingState(this));
+				if (first_deploying == true)
+				{
+					counter++;
+					if (counter > player_list.length)
+					{
+						counter = 0;
+						first_deploying = false;
+					}
+				}
+			}
+			else
+			{
+				textArea.setText("Finish all your deployed armies");
+			}
+		}
+		else if(player_list[counter].getState() instanceof AttackingState)
+		{
+			player_list[counter].setState(new TransferState(this));
+		}
+		else if(player_list[counter].getState() instanceof TransferState)
+		{
+			player_list[counter].setState(new DeployingState(this));
+			int deployed_army = 0;
+			if ( player_list[counter].getOwned_territory()/3 < 3)
+			{
+				deployed_army = 3;
+			}
+			else
+			{
+				deployed_army = Math.floorDiv(player_list[counter].getOwned_territory(),3);
+			}
+			player_list[counter].setDeployedArmy(deployed_army);
+			counter++;
+		}
+		else if(player_list[counter].getState() instanceof SelectingTerritoryState)
+		{
+			if (ownerCheck())
+			{
+				counter = 0;
+				for (int i = 0; i < player_list.length; i++)
+				{
+					player_list[i].setState(new DeployingState(this));
+				}
+			}
+			else
+			{
+				counter++;
+				if (counter >= player_list.length)
+				{
+					counter = 0;
+				}
+			}
+		}
+//		else if (player_list[counter].getState() instanceof EndTurnState)
+//		{
+//			counter++;
+//		}
 		
 		if(player_list[counter].getState() instanceof SelectingTerritoryState)
 		{
-			counter++;
-			if (counter >= player_list.length)
-			{
-				counter = 0;
-			}
-			textArea.setText("Player" + counter + "turn");
+			play.setText("Select");
+			textArea.setText("Player" + " " + (counter + 1) + " " + "turn \n Selecting Territory State... \n Player must select a territory and write it to in first territory area");
+		}
+		else if(player_list[counter].getState() instanceof DeployingState)
+		{
+			play.setText("Fortify");
+			textArea.setText("Player" + " " + (counter + 1) + " " + "turn \n Deploying State... \n Player must select a territory "
+					+ ",write it to in first territory area and write army number that which do you want to fortify \n"
+					+ player_list[counter].getDeployedArmy() + " left");
+		}
+		else if(player_list[counter].getState() instanceof AttackingState)
+		{
+			play.setText("Attack");
+			textArea.setText("Player" + " " + (counter + 1) + " " + "turn \n Attacking State... \n Player must select a territory to attack"
+					+ ",write it to in first territory area, write territory number in second territory area which do you want to attack"
+					+ "and write army number that which do you want to use when attacking");
+
+		}
+		else if(player_list[counter].getState() instanceof TransferState)
+		{
+			play.setText("Transfer");
+			textArea.setText("Player" + " " + (counter + 1) + " " + "turn \n Fortifying State... "
+					+ "\n Player must select a territory ,write it to in first territory area, write territory number in second territory are which do you want to transfer your army to"
+					+ " and write army number that which do you want to transfer");
+
+		}
+	}
+	
+	public void play(ActionEvent event)
+	{
+		if (Integer.parseInt(first_territory.getText()) < 42 && Integer.parseInt(second_territory.getText()) < 42 
+				&&  Integer.parseInt(army.getText()) <= player_list[counter].getDeployedArmy()) {
+			player_list[counter].getState().select(Integer.parseInt(first_territory.getText()), player_list[counter]);
+			player_list[counter].getState().deploy(Integer.parseInt(first_territory.getText()), player_list[counter], Integer.parseInt(army.getText()));
+			player_list[counter].getState().attack(Integer.parseInt(first_territory.getText()), Integer.parseInt(second_territory.getText()), Integer.parseInt(army.getText()), Integer.parseInt(defender_army.getText()));
+			player_list[counter].getState().transfer(Integer.parseInt(first_territory.getText()), Integer.parseInt(second_territory.getText()), player_list[counter], Integer.parseInt(army.getText()));
+		}
+		else
+		{
+			textArea.setText("Wrong Army Number Or Territory Number");
 		}
 	}
 	

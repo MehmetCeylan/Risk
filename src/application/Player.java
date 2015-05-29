@@ -1,33 +1,16 @@
-import java.util.*;
-
 public class Player {
 	private Integer number;
 	private Integer color;
-	private List<Territory> territory_list;
+	private Integer owned_territory;
 	private GameState state;
-	private Integer deployedArmy;
+	private double deployedArmy;
 	
 	public Player () {
 		number = 0;
 		color = 0;
 		deployedArmy = 0;
+		owned_territory = 0;
 		state = null;
-	}
-	
-	public void addTerritory (Territory e) {
-		territory_list.add(e);
-	}
-	
-	public void removeTerritory (Territory e) {
-		territory_list.remove(e);
-	}
-
-	public List<Territory> getTerritory_list() {
-		return territory_list;
-	}
-
-	public void setTerritory_list(List<Territory> territory_list) {
-		this.territory_list = territory_list;
 	}
 
 	public Integer getNumber() {
@@ -54,11 +37,19 @@ public class Player {
 		this.state = state;
 	}
 
-	public Integer getDeployedArmy() {
+	public double getDeployedArmy() {
 		return deployedArmy;
 	}
 
-	public void setDeployedArmy(Integer deployedArmy) {
+	public void setDeployedArmy(double deployedArmy) {
 		this.deployedArmy = deployedArmy;
+	}
+
+	public Integer getOwned_territory() {
+		return owned_territory;
+	}
+
+	public void setOwned_territory(Integer owned_territory) {
+		this.owned_territory = owned_territory;
 	}
 }

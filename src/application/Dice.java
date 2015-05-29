@@ -2,9 +2,9 @@ import java.util.Random;
 
 public class Dice {
 	Random generator = new Random();
-	Integer face;
+	int face;
 	
-	public Integer roll()
+	public int roll()
 	{
 		return generator.nextInt(face);		
 	}

@@ -10,104 +10,104 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="MapController">   
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MapController">   
    <children>
       <ImageView fitHeight="768.0" fitWidth="1366.0" pickOnBounds="true" preserveRatio="true" styleClass="background">
          <image>
             <Image url="@Risk_game_map.png" />
          </image>
       </ImageView>
-      <TextField fx:id="TextField10" layoutX="305.0" layoutY="472.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField10" editable="false" layoutX="305.0" layoutY="472.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField9" layoutX="293.0" layoutY="363.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField9" editable="false" layoutX="293.0" layoutY="363.0" prefHeight="31.0" prefWidth="35.0" text="0" />
   
-      <TextField fx:id="TextField3" layoutX="139.0" layoutY="271.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField3" editable="false" layoutX="139.0" layoutY="271.0" prefHeight="31.0" prefWidth="35.0" text="0" />
   
-      <TextField fx:id="TextField6" layoutX="223.0" layoutY="201.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField6" editable="false" layoutX="223.0" layoutY="201.0" prefHeight="31.0" prefWidth="35.0" text="0" />
  
-      <TextField fx:id="TextField5" layoutX="247.0" layoutY="120.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField5" editable="false" layoutX="247.0" layoutY="120.0" prefHeight="31.0" prefWidth="35.0" text="0" />
   
-      <TextField fx:id="TextField1" layoutX="151.0" layoutY="120.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField1" editable="false" layoutX="151.0" layoutY="120.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField2" layoutX="125.0" layoutY="179.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField2" editable="false" layoutX="125.0" layoutY="179.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField13" layoutX="542.0" layoutY="87.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField13" editable="false" layoutX="542.0" layoutY="87.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField8" layoutX="466.0" layoutY="31.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField8" editable="false" layoutX="466.0" layoutY="31.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField7" layoutX="326.0" layoutY="120.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField7" editable="false" layoutX="326.0" layoutY="120.0" prefHeight="31.0" prefWidth="35.0" text="0" />
     
-      <TextField fx:id="TextField14" layoutX="563.0" layoutY="129.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField14" editable="false" layoutX="563.0" layoutY="129.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField0" layoutX="77.0" layoutY="71.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField0" editable="false" layoutX="77.0" layoutY="71.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField4" layoutX="191.0" layoutY="62.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField4" editable="false" layoutX="191.0" layoutY="62.0" prefHeight="31.0" prefWidth="35.0" text="0" />
  
-      <TextField fx:id="TextField18" layoutX="704.0" layoutY="175.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField18" editable="false" layoutX="704.0" layoutY="175.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField19" layoutX="760.0" layoutY="121.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField19" editable="false" layoutX="760.0" layoutY="121.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField16" layoutX="665.0" layoutY="78.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField16" editable="false" layoutX="665.0" layoutY="78.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField17" layoutX="671.0" layoutY="133.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField17" editable="false" layoutX="671.0" layoutY="133.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField15" layoutX="615.0" layoutY="175.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField15" editable="false" layoutX="615.0" layoutY="175.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField23" layoutX="704.0" layoutY="256.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField23" editable="false" layoutX="704.0" layoutY="256.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField20" layoutX="603.0" layoutY="302.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField20" editable="false" layoutX="603.0" layoutY="302.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField11" layoutX="317.0" layoutY="549.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField11" editable="false" layoutX="317.0" layoutY="549.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField12" layoutX="367.0" layoutY="448.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField12" editable="false" layoutX="367.0" layoutY="448.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField22" layoutX="704.0" layoutY="494.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField22" editable="false" layoutX="704.0" layoutY="494.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField21" layoutX="704.0" layoutY="394.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField21" editable="false" layoutX="704.0" layoutY="394.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField24" layoutX="790.0" layoutY="348.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField24" editable="false" layoutX="790.0" layoutY="348.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField32" layoutX="1049.0" layoutY="119.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField32" editable="false" layoutX="1049.0" layoutY="119.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField29" layoutX="953.0" layoutY="72.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField29" editable="false" layoutX="953.0" layoutY="72.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField26" layoutX="866.0" layoutY="94.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField26" editable="false" layoutX="866.0" layoutY="94.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField27" layoutX="878.0" layoutY="165.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField27" editable="false" layoutX="878.0" layoutY="165.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField28" layoutX="790.0" layoutY="225.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField28" editable="false" layoutX="790.0" layoutY="225.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField25" layoutX="814.0" layoutY="488.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField25" editable="false" layoutX="814.0" layoutY="488.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField31" layoutX="1061.0" layoutY="71.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField31" editable="false" layoutX="1061.0" layoutY="71.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField37" layoutX="1073.0" layoutY="308.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField37" editable="false" layoutX="1073.0" layoutY="308.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField30" layoutX="953.0" layoutY="271.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField30" editable="false" layoutX="953.0" layoutY="271.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField34" layoutX="1049.0" layoutY="225.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField34" editable="false" layoutX="1049.0" layoutY="225.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField33" layoutX="1061.0" layoutY="165.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField33" editable="false" layoutX="1061.0" layoutY="165.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField39" layoutX="1260.0" layoutY="417.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField39" editable="false" layoutX="1260.0" layoutY="417.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField41" layoutX="1260.0" layoutY="519.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField41" editable="false" layoutX="1260.0" layoutY="519.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField40" layoutX="1155.0" layoutY="534.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField40" editable="false" layoutX="1155.0" layoutY="534.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField38" layoutX="1131.0" layoutY="394.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField38" editable="false" layoutX="1131.0" layoutY="394.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField36" layoutX="1226.0" layoutY="202.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField36" editable="false" layoutX="1226.0" layoutY="202.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
-      <TextField fx:id="TextField35" layoutX="1180.0" layoutY="77.0" prefHeight="31.0" prefWidth="24.0" text="0" />
+      <TextField fx:id="TextField35" editable="false" layoutX="1180.0" layoutY="77.0" prefHeight="31.0" prefWidth="35.0" text="0" />
 
       <Text layoutX="71.0" layoutY="640.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Defence" />
       <Text layoutX="157.0" layoutY="640.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attack" />
-      <TextField layoutX="84.0" layoutY="651.0" prefHeight="25.0" prefWidth="27.0" />
-      <TextField layoutX="84.0" layoutY="687.0" prefHeight="25.0" prefWidth="27.0" />
-      <TextField layoutX="164.0" layoutY="651.0" prefHeight="25.0" prefWidth="27.0" />
-      <TextField layoutX="165.0" layoutY="687.0" prefHeight="25.0" prefWidth="27.0" />
-      <TextField layoutX="165.0" layoutY="733.0" prefHeight="25.0" prefWidth="27.0" />
+      <TextField fx:id="defence_dice1" layoutX="84.0" layoutY="651.0" prefHeight="25.0" prefWidth="27.0" />
+      <TextField fx:id="defence_dice2" layoutX="84.0" layoutY="687.0" prefHeight="25.0" prefWidth="27.0" />
+      <TextField fx:id="attack_dice1" layoutX="164.0" layoutY="651.0" prefHeight="25.0" prefWidth="27.0" />
+      <TextField fx:id="attack_dice2" layoutX="165.0" layoutY="687.0" prefHeight="25.0" prefWidth="27.0" />
+      <TextField fx:id="attack_dice3" layoutX="165.0" layoutY="733.0" prefHeight="25.0" prefWidth="27.0" />
       <TextArea fx:id="textArea" layoutX="427.0" layoutY="615.0" prefHeight="149.0" prefWidth="549.0" />
       <Text layoutX="10.0" layoutY="668.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dice 1" />
       <Text layoutX="10.0" layoutY="704.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dice 2" />
@@ -323,7 +323,14 @@
          </font>
       </Text>
       <Button layoutX="20.0" layoutY="587.0" mnemonicParsing="false" onAction="#processEndState" text="END STATE" />
-      <TextField fx:id="first_territory" layoutX="16.0" layoutY="495.0" text="First territory" />
-      <TextField fx:id="second_territory" layoutX="16.0" layoutY="538.0" text="Second territory" />
+      <TextField fx:id="first_territory" layoutX="16.0" layoutY="405.0" text="0" />
+      <TextField fx:id="second_territory" layoutX="16.0" layoutY="467.0" text="0" />
+      <TextField fx:id="army" layoutX="16.0" layoutY="530.0" prefHeight="25.0" prefWidth="54.0" text="0" />
+      <Button fx:id="play" layoutX="143.0" layoutY="587.0" mnemonicParsing="false" onAction="#play" text="Select Territory" visible="false" />
+      <Text layoutX="16.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First territory" />
+      <Text layoutX="16.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Second territory" />
+      <Text layoutX="20.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Army" />
+      <TextField layoutX="89.0" layoutY="529.0" prefHeight="25.0" prefWidth="54.0" text="0" />
+      <Text fx:id="defender_army" layoutX="94.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Defender Army" />
    </children>
 </AnchorPane>
