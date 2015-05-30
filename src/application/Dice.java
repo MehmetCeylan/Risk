@@ -6,7 +6,7 @@ public class Dice {
 	
 	public int roll()
 	{
-		return generator.nextInt(face);		
+		return generator.nextInt(face) + 1;		
 	}
 	
 	public Dice (int m_face)

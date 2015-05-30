@@ -314,7 +314,8 @@ public class MapController extends AnchorPane implements Initializable{
 			player_list[i].setState(new SelectingTerritoryState(this));
 		}
 		
-		textArea.setText("Game Started.... Select a territory\nAll player has" + startingArmy() + "army....Player 1 Turn");
+		textArea.setText("Game Started.... Selecting Territory State\nAll player has " + startingArmy() + " army....Player 1 Turn \n"
+				+ "Write territory which do you want to select and one army will be send to there");
 		for (int i = 0; i < player_list.length; i++)
 		{
 			player_list[i].setDeployedArmy(startingArmy());
@@ -324,7 +325,7 @@ public class MapController extends AnchorPane implements Initializable{
 		play.setVisible(true);
 	}
 	
-	public void processEndState(ActionEvent event)
+	public void processEndState(ActionEvent event) throws Exception
 	{
 		if(player_list[counter].getState() instanceof DeployingState)
 		{
@@ -334,7 +335,7 @@ public class MapController extends AnchorPane implements Initializable{
 				if (first_deploying == true)
 				{
 					counter++;
-					if (counter > player_list.length)
+					if (counter >= player_list.length)
 					{
 						counter = 0;
 						first_deploying = false;
@@ -423,12 +424,16 @@ public class MapController extends AnchorPane implements Initializable{
 				counter = 0;
 			}
 		}
+		
+		if (isGameEnded())
+		{
+			application.stop();
+		}
 	}
 	
 	public void play(ActionEvent event)
 	{
-		if (Integer.parseInt(first_territory.getText()) < 42 && Integer.parseInt(second_territory.getText()) < 42 
-				&&  Integer.parseInt(army.getText()) <= player_list[counter].getDeployedArmy()) {
+		if (Integer.parseInt(first_territory.getText()) < 42 && Integer.parseInt(second_territory.getText()) < 42) {
 			player_list[counter].getState().select(Integer.parseInt(first_territory.getText()), player_list[counter]);
 			player_list[counter].getState().deploy(Integer.parseInt(first_territory.getText()), player_list[counter], Integer.parseInt(army.getText()));
 			player_list[counter].getState().attack(Integer.parseInt(first_territory.getText()), Integer.parseInt(second_territory.getText()), 
@@ -459,6 +464,26 @@ public class MapController extends AnchorPane implements Initializable{
 			return "-fx-control-inner-background: purple;";
 		default:
 			return "-fx-control-inner-background: white;";
+		}
+	}
+	
+	public boolean isGameEnded()
+	{
+		int counter = 0;
+		for (int i = 0; i < player_list.length; i++)
+		{
+			if (player_list[i].getState() instanceof EndGameState)
+			{
+				counter++;
+			}
+		}
+		if (counter == player_list.length - 1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
 		}
 	}
 }

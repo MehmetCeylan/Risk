@@ -323,14 +323,14 @@
          </font>
       </Text>
       <Button layoutX="20.0" layoutY="587.0" mnemonicParsing="false" onAction="#processEndState" text="END STATE" />
-      <TextField fx:id="first_territory" layoutX="16.0" layoutY="405.0" text="0" />
-      <TextField fx:id="second_territory" layoutX="16.0" layoutY="467.0" text="0" />
+      <TextField fx:id="first_territory" layoutX="16.0" layoutY="405.0" prefHeight="25.0" prefWidth="77.0" text="0" />
+      <TextField fx:id="second_territory" layoutX="16.0" layoutY="467.0" prefHeight="25.0" prefWidth="77.0" text="0" />
       <TextField fx:id="army" layoutX="16.0" layoutY="530.0" prefHeight="25.0" prefWidth="54.0" text="0" />
       <Button fx:id="play" layoutX="143.0" layoutY="587.0" mnemonicParsing="false" onAction="#play" text="Select Territory" visible="false" />
       <Text layoutX="16.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First territory" />
       <Text layoutX="16.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Second territory" />
       <Text layoutX="20.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Army" />
-      <TextField layoutX="89.0" layoutY="529.0" prefHeight="25.0" prefWidth="54.0" text="0" />
-      <Text fx:id="defender_army" layoutX="94.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Defender Army" />
+      <TextField fx:id="defender_army" layoutX="89.0" layoutY="529.0" prefHeight="25.0" prefWidth="54.0" text="0" />
+      <Text layoutX="94.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Defender Army" />
    </children>
 </AnchorPane>

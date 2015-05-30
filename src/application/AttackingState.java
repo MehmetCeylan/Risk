@@ -1,4 +1,7 @@
 import java.util.Arrays;
+import java.util.Optional;
+
+import javafx.scene.control.TextInputDialog;
 
 public class AttackingState implements GameState{
 
@@ -28,7 +31,7 @@ public class AttackingState implements GameState{
 		{
 			if (controller.map_list[second_territory].getOwner().getNumber() != controller.map_list[first_territory].getOwner().getNumber())
 			{
-				if (controller.map_list[second_territory].getOwner().getNumber() >= defender_army)
+				if (controller.map_list[second_territory].getArmy() >= defender_army)
 				{
 					Dice dice = new Dice(6);
 					int[] attacking_rolls = new int[army];
@@ -53,7 +56,7 @@ public class AttackingState implements GameState{
 					int defender_won = 0;
 					int attacking_rols_lenght = attacking_rolls.length;
 					
-					for (int i = defending_rolls.length - 1 ; i > 0; i--)
+					for (int i = defending_rolls.length - 1 ; i >= 0; i--)
 					{
 						if (attacking_rolls[attacking_rols_lenght - 1] > defending_rolls[i])
 						{
@@ -70,18 +73,27 @@ public class AttackingState implements GameState{
 						}
 					}
 					
-					controller.map_list[first_territory].setArmy(controller.map_list[first_territory].getArmy() + (attacker_won - defender_won));
+					controller.map_list[first_territory].setArmy(controller.map_list[first_territory].getArmy() - defender_won);
 					
-					if ((attacker_won - defender_won) > 0)
+					if ((attacker_won > defender_won))
 					{
-						controller.map_list[second_territory].setArmy(controller.map_list[second_territory].getArmy() - (attacker_won - defender_won));
-					}
-					
-					if (controller.map_list[second_territory].getArmy() == 0)
-					{
-						if (controller.map_list[second_territory].getOwner().getOwned_territory() == 1)
+						controller.map_list[second_territory].setArmy(controller.map_list[second_territory].getArmy() - (attacker_won));
+						if (controller.map_list[second_territory].getArmy() == 0)
 						{
-							controller.map_list[second_territory].getOwner().setState(new EndGameState(controller));
+							TextInputDialog dialog = new TextInputDialog("invasion");
+							dialog.setTitle("Invasion");
+							dialog.setHeaderText("Invasion");
+							dialog.setContentText("Attacked territory lost all army. Enter army number which do you want to transfer invaded territory:");
+							Optional<String> result = dialog.showAndWait();
+							if (result.isPresent()){
+								controller.map_list[second_territory].setOwner(owner);
+								controller.map_list[second_territory].setArmy(Integer.parseInt(result.get()));
+							}
+							
+							if (controller.map_list[second_territory].getOwner().getOwned_territory() == 1)
+							{
+								controller.map_list[second_territory].getOwner().setState(new EndGameState(controller));
+							}
 						}
 					}
 				}

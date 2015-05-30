@@ -15,7 +15,7 @@ public class SelectingTerritoryState implements GameState {
 			controller.textFieldArray[territory].setText("1");
 			controller.textFieldArray[territory].setStyle(controller.map_color(owner.getColor()));
 			owner.setDeployedArmy(owner.getDeployedArmy() - 1);
-			owner.setOwned_territory(1);
+			owner.setOwned_territory(owner.getOwned_territory() + 1);
 		}
 		else
 		{
