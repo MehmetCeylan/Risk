@@ -74,10 +74,12 @@ public class AttackingState implements GameState{
 					}
 					
 					controller.map_list[first_territory].setArmy(controller.map_list[first_territory].getArmy() - defender_won);
+					controller.textFieldArray[first_territory].setText(Integer.toString((controller.map_list[first_territory].getArmy())));
 					
 					if ((attacker_won > defender_won))
 					{
 						controller.map_list[second_territory].setArmy(controller.map_list[second_territory].getArmy() - (attacker_won));
+						controller.textFieldArray[second_territory].setText(Integer.toString((controller.map_list[second_territory].getArmy())));
 						if (controller.map_list[second_territory].getArmy() == 0)
 						{
 							TextInputDialog dialog = new TextInputDialog("invasion");
@@ -96,6 +98,7 @@ public class AttackingState implements GameState{
 							}
 						}
 					}
+					controller.textArea.setText("Defender lost " + attacker_won + " army Attacker lost " + defender_won + " army");
 				}
 			}
 		}

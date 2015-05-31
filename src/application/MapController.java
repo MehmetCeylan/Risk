@@ -22,6 +22,7 @@ public class MapController extends AnchorPane implements Initializable{
 	public TextField[] defenderDiceArray;
 	public TextField[] attackingDiceArray;
 	private boolean first_deploying = true;
+	private boolean first_attacking = true;
 	
 	@FXML
 	TextField TextField0;
@@ -353,7 +354,20 @@ public class MapController extends AnchorPane implements Initializable{
 		}
 		else if(player_list[counter].getState() instanceof TransferState)
 		{
-			player_list[counter].setState(new DeployingState(this));
+			counter++;
+			if (counter >= player_list.length)
+			{
+				counter = 0;
+			}
+			if (first_attacking)
+			{
+				player_list[counter].setState(new AttackingState(this));
+				first_attacking = false;
+			}
+			else
+			{
+				player_list[counter].setState(new DeployingState(this));
+			}
 			int deployed_army = 0;
 			if ( player_list[counter].getOwned_territory()/3 < 3)
 			{
@@ -364,7 +378,6 @@ public class MapController extends AnchorPane implements Initializable{
 				deployed_army = Math.floorDiv(player_list[counter].getOwned_territory(),3);
 			}
 			player_list[counter].setDeployedArmy(deployed_army);
-			counter++;
 		}
 		else if(player_list[counter].getState() instanceof SelectingTerritoryState)
 		{
@@ -409,7 +422,7 @@ public class MapController extends AnchorPane implements Initializable{
 		else if(player_list[counter].getState() instanceof TransferState)
 		{
 			play.setText("Transfer");
-			textArea.setText("Player" + " " + (counter + 1) + " " + "turn \n Fortifying State... "
+			textArea.setText("Player" + " " + (counter + 1) + " " + "turn \n Transfer State... "
 					+ "\n Player must select a territory ,write it to in first territory area, write territory number in second territory are which do you want to transfer your army to"
 					+ " and write army number that which do you want to transfer");
 
